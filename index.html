@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id='favicon' rel="shortcut icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFm-8IAD0OZr6sld41vcC5nOH4zlI6kfKTRSt5ojgWXwy03kYRkxkA9RPr_nXiMVV2DSQw2nMc6U8GA3FDGr80-QpciOXvhorzp7IkR-2GWF2DaDAuVLtCzXEjeOeXQ_MC_ItlxX6QovO_cYL5u-BmVHJMKYawdc3t-NALOhYnNnFccKjFSNcGZBPj0n6i/s16000/favicon.png" type="image">
+    <title>Nazmul Sakib | Portfolio Website</title>
+    <!-- font -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- font end -->
+     <!-- font awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- font awesome end -->
+
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url(nav.css);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: "Popins", sans-serif;
+}
+:root{
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: white;
+    --main-color: #00ffee;
+}
+
+html{
+    font-size: 60%;
+    overflow: visible;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.loader_bg{
+    position: fixed;
+    z-index: 999999;
+    background: var(--bg-color);
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+.loader{
+    border: 1px soild transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+    content: '';
+    border: 1em solid var(--main-color);
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: .5s;
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    padding: 4rem 12% 4rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.favicon{
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-left: -135%;
+    text-align: left;
+}
+.favicon:hover{
+    transform: scale(1.1);
+}
+.logo{
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-left: -200px;
+    margin-right: -100px;
+    font-family: sans-serif;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.logo span{
+    text-shadow: 0 0 25px var(--main-color);
+    font-family: sans-serif;
+    font-weight: 700;
+}
+.logo label{
+    font-family: sans-serif;
+    font-weight: 700;
+    margin-left: 10px;
+    color: var(--main-color);
+    text-shadow: 0 0 50px var(--main-color);
+}
+.navbar a{
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+span{
+    color: var(--main-color);
+}
+.logo span{
+    color: var(--main-color);
+}
+.home-content h3{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+.home-content h1{
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+.home-img{
+    border-radius: 50%;
+}
+.home-img img{
+    position: relative;
+    top: 3rem;
+    width: 28vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    margin-top: 5px;
+    border: 2px solid var(--main-color);
+}
+.home-img img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 250px var(--main-color),
+                0 0 100px var(--main-color);
+}
+.home-content p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+.social-icons a:hover{
+    background: var(--main-color);
+    color: var(--snd-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    transform: scale(1.3)translateY(-5px);
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: black;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.btn-group{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.btn-group a:nth-of-type(2){
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+.btn-group a:nth-of-type(2):hover{
+    box-shadow:  0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: black;
+}
+
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: "Web Developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor {
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20%{
+        content: "Web Developer";
+    }
+    21%,
+    40%{
+        content: "Graphic Designer";
+    }
+    41%,
+    60%{
+        content: "Apps Developer";
+    }
+    61%,
+    80%{
+        content: "UI / UX Designer";
+    }
+    81%,
+    100%{
+        content: "Software Engineer";
+    }
+}
+@keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
+}
+/* home end */
+
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: #1f1e1e;
+}
+
+.about-img img {
+    width: 15vw;
+    height: 450px;
+    border: 10px solid var(--main-color);
+    border-radius: 5px;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.about-img img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 250px var(--main-color),
+                0 0 100px var(--main-color);
+
+    transform: scale(1.1);
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+}
+.about-content{
+    margin: 5%;
+}
+.about-content h2 {
+    text-align: left;
+    line-height: 0.5;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+/* about end */
+
+.heading{
+    font-size: 8rem;
+    text-align: center;
+    margin: 3rem 0;
+}
+.timeline-section{
+	background: var(--second-bg-color);
+	min-height: 100vh;
+	padding: 100px 15px;
+}
+.timeline-items{
+	max-width: 1200px;
+	margin:auto;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+.timeline-items::before{
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 100%;
+	background-color: var(--main-color);
+	left: calc(50% - 1px);
+}
+.timeline-item{
+	margin-bottom: 40px;
+	width: 100%;
+	position: relative;
+}
+.timeline-item:last-child{
+	margin-bottom: 0;
+}
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+	text-align: right;
+}
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+.timeline-dot{
+	height: 21px;
+	width: 21px;
+	background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+	position: absolute;
+	left: calc(50% - 8px);
+	border-radius: 50%;
+	top:10px;
+}
+.timeline-date{
+	font-size: 20px;
+	color: white;
+	margin:6px 0 15px;
+}
+.timeline-content{
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.timeline-content h3{
+    font-size: 20px;
+	color: #ffffff;
+	margin:0 0 10px;
+	text-transform: capitalize;
+	font-weight: 500;
+}
+.timeline-content p{
+    color: #c8c8c8;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 22px;
+}
+
+/* responsive */
+/* @media(max-width: 767px){
+	.timeline-items::before{
+		left: 7px;
+	}
+	.timeline-item:nth-child(odd){
+		padding-right: 0;
+		text-align: left;
+	}
+	.timeline-item:nth-child(odd),
+	.timeline-item:nth-child(even){
+		padding-left: 37px;
+	}
+	.timeline-dot{
+		left:0;
+	}
+} */
+
+::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    width: 40px;
+}
+.viewall{
+    display: flex;
+    justify-content: center;
+}
+.btn2{
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: black;
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    text-align: center;
+    line-height: 0;
+}
+.text{
+    color: black;
+}
+.btn2 i{
+    margin-left: 0.3rem;
+    font-size: 1.5rem;
+    transition: 0.3s;
+    color: black;
+}
+.btn2:hover{
+    transform: scale(1.05);
+}
+/* Education end */
+
+.services{
+    background: var(--bg-color);
+    color: black;
+}
+.services h2{
+    margin-bottom: 5rem;
+    color: white;
+}
+.service-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+.service-box{
+    background-color: var(--main-color);
+    height: 400px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+
+}
+.service-box:hover{
+    background: white;
+    color: black;
+    border: 5px solid var(--main-color);
+    box-shadow: 0 0 12.5px var(--main-color),
+    0 0 125px var(--main-color),
+    0 0 50px var(--main-color);
+    transform: scale(1.03);
+}
+.service-box .service-info{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-height: 200px;
+    justify-content: left;
+    align-items: baseline;
+    padding: 5rem 5rem;
+}
+.service-info h4{
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 2;
+}
+.service-info p{
+    font-size: 1.6rem;
+    font-weight: 600;
+    max-height: 100px;
+    line-height: 1.7;
+    margin: auto;
+}
+
+/* service end */
+
+.skills h1 {
+    margin-bottom: 5rem;
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.skills-container .skills-border {
+    flex: 1 1 30rem;
+    background: #474444;
+    border-radius: 2rem;
+    text-align: center;
+    border: .5rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.skills-container .skills-border:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+    box-shadow: 0 0 25px var(--main-color),
+    0 0 250px var(--main-color),
+    0 0 100px var(--main-color);
+}
+.skills-border i {
+    font-size: 7rem;
+    color: var(--main-color);
+    margin-top: 8%;
+}
+.skills-border h3 {
+    font-size: 2.6rem;
+    margin-top: 5px;
+}
+
+.skills-border p {
+    font-size: 1.6rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: auto;
+    margin-top: 2%;
+}
+
+#btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+    margin-bottom: 8%;
+    margin-top: 8%;
+}
+
+#btn:hover {
+    box-shadow: none;
+}
+/* skills end */
+
+.portfolio {
+    background: var(--snd-bg-color);
+}
+
+.portfolio h2 {
+    margin-bottom: 4rem;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.portfolio-container .portfolio-box{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.portfolio-box img {
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0.7;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 3rem;
+}
+
+.portfolio-layer p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--snd-bg-color);
+    border-radius: 50%;
+}
+
+.portfolio-layer a i {
+    font-size: 2rem;
+    color: var(--snd-bg-color);
+}
+
+.portfolio-layer i {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* portfolio end */
+.testimonials{
+    background: var(--second-bg-color);
+}
+.testimonials-box{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.testimonials .heading{
+    margin-bottom: 5rem;
+}
+.testimonials-box img{
+    width: 15rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+}
+.testimonial-item{
+    min-height: 505px;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid rgba(238, 238, 238, 0.2);
+    border-radius: 2rem;
+    margin: 0 2rem;
+    padding: 38px 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+.testimonial-item:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.testimonial-item h2{
+    font-size: 2.8rem;
+}
+.testimonial-item p{
+    font-size: 1.3rem;
+}
+#star{
+    color: gold;
+}
+/* testimonial end */
+
+.contact h2 {
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+    border: 3px solid var(--main-color);
+}
+.contact form .input-box input:hover{
+    box-shadow: 0 0 25px var(--main-color);
+}
+.contact form textarea:hover{
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+/* contact end */
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--second-bg-color);
+    min-height: 60%;
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 20px;
+    color: var(--main-color);
+}
+.footer .social a{
+    font-size: 20px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    width: 40px;
+    height: 40px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin:  0 5px;
+    transition: 0.3s ease-in-out;
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    background-color: var(--main-color);
+    color: black;
+    box-shadow: 0 0 25px var(--main-color);
+}
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: -5px;
+}
+.footer ul li a{
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid var( --main-color);
+}
+.footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+.footer .copyright{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+/* footer end */
+
+/* css to reset all the designs */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+:root{
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: white;
+    --main-color: #00ffee;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* css to reset all the designs */
+
+/* add styles on elements */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border: none;
+}
+
+#logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: default;
+    text-transform: uppercase;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    border: 0.1px transparent var(--bg-color);
+    /* border: 1px solid transparent; */
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+.hamburger {
+    display: none;
+    color: var(--main-color);
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    /* background-color: #101010; */
+    background-color: var(--main-color);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item{
+    font-weight: bold;
+}
+
+.nav-link {
+    /* font-size: 1.6rem; */
+    font-size: 2rem;
+    font-weight: 400;
+    /* color: #475569; */
+    color: #fff;
+    /* change */
+}
+
+.nav-link:hover {
+    color: #482ff7;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        /* background-color: #fff; */
+        background-color: var(--bg-color);
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-link {
+        color: #fff;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: 80%;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+/* add styles on elements */
+
+/* responsive view */
+@media(max-width:1285px){
+    html{
+        font-size: 55%;
+    }
+    .services-container{
+        padding-bottom: 7rem;
+        grid-template-columns: repeat(2,1fr);
+        margin: 0 5rem;
+    }
+}
+
+@media (max-width: 760px) {
+    
+    .about {
+        flex-direction: column;
+    }
+
+    .about-img img {
+        width: 30vw;
+        height: 50vw;
+        border: 10px solid var(--main-color);
+        border-radius: 5px;
+        box-shadow: 0 0 25px var(--main-color);
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+
+}
+
+@media(max-width:991px){
+    header{
+        padding: 2rem 3%;
+    }
+    section{
+        padding: 10rem 3% 2rem;
+    }
+    .timeline-item::before{
+        left: 7px;
+    }
+    .timeline-item:nth-child(odd){
+        padding-right: 0;
+        text-align: left;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even){
+        padding-left: 37px;
+    }
+    .timeline-dot{
+        left: 0;
+    }
+    .services{
+        padding-bottom: 7rem;
+    }
+    .testimonials .wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .contact form{
+        flex-direction: column;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+@media(max-width:895px){
+    .home{
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+    .home-content h1{
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+    .home-content p{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .home-img img{
+        width: 56vw;
+    }
+    .service h2{
+        margin-bottom: 3rem;
+    }
+    .service-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+     </style>
+
+</head>
+<body oncontextmenu="return false"> 
+
+              <!-- pre loader -->
+              <div class="loader_bg">
+                <div class="loader"></div>
+            </div>
+            <!-- pre loader end -->
+
+    <header class="header"><a href="#">
+        <img class="favicon" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFm-8IAD0OZr6sld41vcC5nOH4zlI6kfKTRSt5ojgWXwy03kYRkxkA9RPr_nXiMVV2DSQw2nMc6U8GA3FDGr80-QpciOXvhorzp7IkR-2GWF2DaDAuVLtCzXEjeOeXQ_MC_ItlxX6QovO_cYL5u-BmVHJMKYawdc3t-NALOhYnNnFccKjFSNcGZBPj0n6i/s16000/favicon.png" alt=""></a>
+        <a href="#home" class="logo">
+            Nazmul <span>Sakib</span><label for="">.</label></a>
+
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#education" class="nav-link">Education</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">Skills</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#testimonials" class="nav-link">Testimonials</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+    </header>
+
+    <section class="home" id="home">
+        
+        <div class="home-content">
+            <h1>Hi, It's <span>Nazmul</span></h1> <br>
+            <h3 class="text-animation">I'm a <span></span></h3>
+
+            <script src="container.js"></script>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste ipsa non repudiandae, sunt quae eius fugit aperiam, id harum aliquid cumque natus eaque totam quo consectetur! Sed nobis accusantium maiores! Modi expedita deserunt at esse, autem sed laborum consectetur, vero aspernatur molestiae consequuntur atque animi, sapiente rerum. Animi, dignissimos? Rerum.</p>
+
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/nazmulsakib24" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mdnazmul8309/"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/MdNazmulsakib15" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://github.com/nazmul546924" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nazmul-sakib/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@magastudio54" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <div class="btn-group">
+                <a href="#" class="btn">Hire me</a>
+                <a href="#contact" class="btn">Contact me</a>
+            </div>
+
+        </div>
+
+        <div class="home-img">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgllEPzdM0GFhTFAHGdKAVWlsSAYXGiTiB3JS4ttwCtr3llvfPzQoCvbrw6rbMy2b35RHpMg4T7Pw9t57M7phVjPfBq0xQ7_4EkVjnywRswqcuY4uYPlN2ye4s38sfjUSDTlKBqZDvpT7RyycJQ8gVYJo0PIOqmcvA1qTd7OMIBpSxcS9e15CbRsxIQk4bw/s16000/img-me2.jpg" alt="" >
+        </div>
+    </section>
+    <!-- section home end -->
+
+    <!-- ABOUT SECTION DESIGN -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_yRmAZ0LV5HDs6DoG6wAewcxK4QjtbXdzI0L5sF9oFzA0KZRxE2nzPgE8TBRLDznP9g2iaj9Zy4MGLYZc5AXpvQ8_f158ONG1oJudJOfH1x_4iNVUcTdhw_MaU9xJi0vdaTwePQZpR4sVO0jpMX0tnko0myc-lEQSgxTjlhhMpAfq8f1H_uzAYVkYFz9f/s16000/aboutpic.png" alt="">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">ABOUT <span>Me</span></h2>
+            <h3>Frontend Developer</h3>
+            <p id="p-about">Hi, There, I am Md:Nazmu Sakib. I am a Software Engineer. I am a web developer. I am a Android Apps Devloper. And Any another Coding Development Expart. And any other web development program customization tools are learning now in 2022. I am a graphic designer. 🔘Photoshop 🔘Illustrator | I am an Apps developer.
+            </p>
+            <a href="#about" class="btn" id="btni">Read more</a>
+        </div>
+    </section>
+    <!-- About section end -->
+
+    <section class="timeline-section" id="education">
+        <h1 class="heading">Education</h1>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020</div>
+                <div class="timeline-content">
+                    <h3>High School</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2023</div>
+                <div class="timeline-content">
+                    <h3>university</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>Internships</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <h3>Job 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+
+        <div class="viewall">
+            <a href="#education" class="btn2"><span class="text">View All</span>
+              <i class="fas fa-arrow-right"></i>
+          </a>
+          </div>
+    </section>
+    <!-- section education end -->
+
+    <section class="services" id="services">
+        <h2 class="heading">Services</h2>
+        
+        <div class="service-container">
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Graphic Design</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil distinctio cumque dicta ea, harum non corporis possimus temporibus soluta perferendis perspiciatis dolore ex incidunt tempora voluptas quae nam beatae vel odit sit quos libero necessitatibus veritatis ullam. Laboriosam et, iste ratione nam eligendi quam est iure quasi asperiores maxime voluptate?</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil distinctio cumque dicta ea, harum non corporis possimus temporibus soluta perferendis perspiciatis dolore ex incidunt tempora voluptas quae nam beatae vel odit sit quos libero necessitatibus veritatis ullam. Laboriosam et, iste ratione nam eligendi quam est iure quasi asperiores maxime voluptate?</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Web Development</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil distinctio cumque dicta ea, harum non corporis possimus temporibus soluta perferendis perspiciatis dolore ex incidunt tempora voluptas quae nam beatae vel odit sit quos libero necessitatibus veritatis ullam. Laboriosam et, iste ratione nam eligendi quam est iure quasi asperiores maxime voluptate?</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>Apps Development</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil distinctio cumque dicta ea, harum non corporis possimus temporibus soluta perferendis perspiciatis dolore ex incidunt tempora voluptas quae nam beatae vel odit sit quos libero necessitatibus veritatis ullam. Laboriosam et, iste ratione nam eligendi quam est iure quasi asperiores maxime voluptate?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section services end -->
+
+    <section class="skills" id="skills">
+        <h1>MY <span>Skills</span></h1>
+
+        <div class="skills-container">
+            <div class="skills-border">
+                <i class="fa-solid fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                <a href="#skills" id="btn">Read More</a>
+            </div>
+
+            <div class="skills-border">
+                <i class="fa-solid fa-pen-nib"></i>                <h3>Graphic Design</h3>
+                <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                <a href="#skills" id="btn">Read More</a>
+            </div>
+
+            <div class="skills-border">
+                <i class="fa-brands fa-android"></i>
+                <h3>Apps Development</h3>
+                <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                <a href="#skills" id="btn">Read More</a>
+            </div>
+        </div>
+<!--  -->
+        <br />
+<!--  -->
+        <div class="skills-container">
+
+            <div class="skills-border">
+                <i class="fa-solid fa-palette"></i>
+                <h3>UI/UX Designing</h3>
+                <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                <a href="#skills" id="btn">Read More</a>
+            </div>
+
+            <div class="skills-border">
+                <i class="fa-brands fa-python"></i>
+                <h3>Software Development</h3>
+                <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                <a href="#skills" id="btn">Read More</a>
+            </div>
+
+            <div class="skills-border">
+                <i class="fa-brands fa-js"></i>
+                <h3>Programing & Design</h3>
+                <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                <a href="#skills" id="btn">Read More</a>
+            </div>
+
+            <div class="skills-border">
+                <i class="fa-brands fa-wordpress"></i>
+                <h3>CMS & Server</h3>
+                <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate aperiam aliquid ab excepturi, amet ipsum possimus corrupti ea ullam minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, id? Lorem ipsum dolor sit amet consectetur adipisicing elit. In, dignissimos!</p>
+                <a href="#skills" id="btn">Read More</a>
+            </div>
+        </div>
+     </section>
+
+          <!-- PORTFOLIO SECTION DESIGN -->
+          <section class="portfolio" id="portfolio">
+            <h2 class="heading">Latest <span>Project</span></h2>
+    
+            <div class="portfolio-container">
+                <div class="portfolio-box">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsDWlzqfu13Ku4c8a4atQdWhN0KfO3Gn-S6HHplhF5xsyI2gL1qBeDxrC8_iTCtVu7dWZ4oa4U20n-_kLiMX9RCjlzsextTT9A6ZhR3jeOQ7b2SK8z6vNgjaqSZI7iVtvmePd68p5A4FNg6l1AGbja8IpeqRxso9YH298yX0iafWf0E7fSrAJp8YQeTqMa/s16000/1.jpg" alt="">
+                    <div class="portfolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </div>
+                </div>
+    
+                <div class="portfolio-box">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizoZHzLaREpatSX0VtKzjC2fKwZDVMAd3XIDBED5Tz_s0-NroX8ey7yQ1HW__xvPmISivkXQkX8mXSQn4tuAFovE-Ck8o10GRljjCeOu9B0WgddEkoBYK_16oHQFdbJTJg2I29mwqSy5C0vWJY6iZS2as_xNI7CX4IGq0Z4NbFoGxHGAgRQM-NOxzKhOgP/s16000/2.jpg" alt="">
+                    <div class="portfolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </div>
+                </div>
+    
+    
+                <div class="portfolio-box">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9c_iBrFdlZPkTNg1t1A_NTWrqGUTFbxHpJUxyodXXnfmu9ooRh2KOOTkhc-dH-6KGMVfe21JY7FazMycuylEtp-OaBUEeUn5ByM8wPKKrrnb3ARcQOwkv7nb7LHSHQ_O-yEw37CWxAWWq_K3fcSH-Zo5dId5Et7RyMysa9iGi_si_LSVqee3ZTcOfs04y/s16000/3.jpg" alt="">
+                    <div class="portfolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </div>
+                </div>
+    
+                <div class="portfolio-box">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQlW25QTOp3Li6tufLH4VCFVSzXD88YHgGSGuO3dFx6fURziOQN2xHbglSaeTe9m_GIpeXsZ5gJ3VWPAT7uE1BD_IbJAQ5j2oNXnX-l6ZHNFsqoTBJesKWGrAtpxHv-wcTm9RjXu-popWJMQiy7u2TncGmCVSzFtdWL4VkLY8Z3fE-aY_DX3OAO6jvyiJj/s16000/4.jpg" alt="">
+                    <div class="portfolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </div>
+                </div>
+    
+                <div class="portfolio-box">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQ2FJ8-FgkSUot-Hz_TGyN2aXhPMrX-XQ1dOVy2tciFvmpTA-G1LrHXSFr1T8ffKKeSBP8U4mPCNm8l-A9U2XscExOfFsUj_g8OGIHyVuK_kfq9QaP5fqxRyyCacJ4XdIBVHNbhehOjtBWn1Se94HizSoGkq04wg4F6XpaGivcRbtlPdShKKVHuXugCsId/s16000/5.jpg" alt="">
+                    <div class="portfolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </div>
+                </div>
+    
+                <div class="portfolio-box">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs_h6JiqohwtQXXE-DxQ_I3d1ryPh9vD2bbtrErG9qZbpo_v0_n7hmM1vulgGCNDEnrWw0cZVGDq_9uDTnF85G17ATECYR4LXDjaIbc_S1kV8ajLT8A-Qw12nrNpzRWgxDTDtkVI9F6Uo-P2g5OOgsUGmMjnz4Q2qhIe9UjzVp2RvGr_EucbWzVoBawd7t/s16000/6.jpg" alt="">
+                    <div class="portfolio-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </div>
+                </div>
+            </div>
+          </section>
+      <!-- protfolio end -->
+
+      <section class="testimonials" id="testimonials">
+        <div class="testimonials-box">
+            <h2 class="heading">Testimonials</h2>
+
+            <div class="wrapper">
+
+                <div class="testimonial-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7bvsARVnvYPCRRKu-dhCnbXgYoYtmkk1PQwYXrk_j3FdBajnHP740O9S43i-WtQWrYZQ4papZYQfvPv62RV0sZUTs10N0fcug-4Qzl624Xjm2hVGlachz5_ZH0fyNuCUGP_5CJ5tyWhGmSp6ez-JcPjDP2d9G7CbbcbZaDeUHd9sdrT16-SpswRLZTvo1/s16000/img1.png" alt="">
+
+                    <h2>Alex Rose</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus iste ab non, consequuntur error totam tempora pariatur porro sit dicta?</p>
+
+                    <div class="viewall">
+                        <a href="#testimonials" class="btn2"><span class="text">View more</span>
+                          <i class="fas fa-arrow-right"></i>
+                      </a>
+                      </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVB1LkRQoTSgnQSmGRwT4q8pd7WhUuMW5I_g8Y1cNQ4CZt_b9X57mdhAGRCEFODgCXbghcEN-XI5gHhnf9LHlBcgQZJBY9ObxgH_UK0om_4c-JFIthlqYg-nLaisViyCAJdNW_4KQib6ObX8oHcKyBCvorRboqrAehOFFBLK71TDkTTSiwSJiV-n10-4DN/s16000/img2.png" alt="">
+
+                    <h2>Davad Mac</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus iste ab non, consequuntur error totam tempora pariatur porro sit dicta?</p>
+
+                    <div class="viewall">
+                        <a href="#testimonials" class="btn2"><span class="text">View more</span>
+                          <i class="fas fa-arrow-right"></i>
+                      </a>
+                      </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPEdm5fcssqFwjEWBBoLfZSxBnNWMdLfSm7oD7QKSFrqGKkUvyeMA3kcCMSHXSRA4gdMh8olhCeRaG4W1BRR97swsCAKEjBiqhPCSyH0gRHU2D0OLSzJ8M_k4n5MDPxByxJ3VLUC7ctAah3iGwl9aADJF-OjcEJRdhMb5pxvB_bOoMQFoeS46HZDefbA9C/s16000/img3.png" alt="">
+
+                    <h2>Jone Don</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus iste ab non, consequuntur error totam tempora pariatur porro sit dicta?</p>
+
+                    <div class="viewall">
+                        <a href="#testimonials" class="btn2"><span class="text">View more</span>
+                          <i class="fas fa-arrow-right"></i>
+                      </a>
+                      </div>
+                </div>
+
+            </div>
+        </div>
+      </section>
+
+      <!-- testominail end -->
+
+      <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" name="" id="" placeholder="Full Name:">
+                <input type="email" name="" id="" placeholder="Email Address:">
+            </div>
+
+            <div class="input-box">
+                <input type="number" name="" id="" placeholder="PHone Number:">
+                <input type="text" name="" id="" placeholder="Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Massage..."></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+      <footer class="footer">
+        <div class="social">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/nazmulsakib24" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mdnazmul8309/"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/MdNazmulsakib15" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://github.com/nazmul546924" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nazmul-sakib/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@magastudio54" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <ul class="list">
+            <li>
+                <a href="#">FAQ</a>
+            </li>
+
+            <li>
+                <a href="#">Services</a>
+            </li>
+
+            <li>
+                <a href="#">About Me</a>
+            </li>
+
+            <li>
+                <a href="#">Contact</a>
+            </li>
+
+            <li>
+                <a href="#">Testimonials</a>
+            </li>
+        </ul>
+        <p class="copyright">
+            © Nazmul Sakib | All Rights Reseved
+        </p>
+      </footer>
+      <!-- footer end -->
+
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+
+// when we click on hamburger icon its close 
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+        }, 3000);
+    </script>
+
+</body>
+</html>
